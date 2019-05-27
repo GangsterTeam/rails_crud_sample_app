@@ -23,10 +23,10 @@ end
 or 
 ```ruby
 Rails.application.routes.draw do
-get 'samples/index'
-get 'samples/show'
-get 'samples/new'
-get 'samples/edit'
+  get 'samples/index'
+  get 'samples/show'
+  get 'samples/new'
+  get 'samples/edit'
 end
 ```
 6. ```rake db:migrate```
@@ -36,7 +36,7 @@ end
 **app/controllers/samples_controller.rb**
 ```ruby
 def index
-@samples = Sample.all
+  @samples = Sample.all
 end
 ```
 **views/samples/index.html.erb**
@@ -50,7 +50,7 @@ end
 **app/controllers/samples_controller.rb**
 ```ruby
 def show
-@sample = Sample.find(params[:id])
+  @sample = Sample.find(params[:id])
 end
 ```
 **views/samples/show.html.erb**
@@ -62,17 +62,17 @@ end
 **app/controllers/samples_controller.rb**
 ```ruby
 def new
-@sample = Sample.new
+  @sample = Sample.new
 end
 
 def create
-sample = Sample.create(sample_params)
-redirect_to samples_path
+  sample = Sample.create(sample_params)
+  redirect_to samples_path
 end
 
 private
 def sample_params
-params.require(:sample).permit(:name)
+  params.require(:sample).permit(:name)
 end
 ```
 **views/samples/new.html.erb**
