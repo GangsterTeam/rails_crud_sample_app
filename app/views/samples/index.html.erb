@@ -1,5 +1,9 @@
-<ul>
+<table>
   <% @samples.each do |sample| %>
-    <li><%= link_to sample.name, sample_path(sample)  %></li>
+    <tr>
+      <td><%= link_to sample.name, sample_path(sample) %></td>
+      <td><%= button_to 'Edit', edit_sample_path(sample), method: 'get'%></td>
+      <td><%= button_to 'Remove', sample_path(sample), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
   <% end %>
-</ul>
+</table>
+<%= link_to "Add a New Sample", new_sample_path %>
