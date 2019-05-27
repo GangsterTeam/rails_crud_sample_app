@@ -1,2 +1,6 @@
-<h1>Samples#edit</h1>
-<p>Find me in app/views/samples/edit.html.erb</p>
+<h3>Update Sample Details</h3>
+<%= form_with model: @sample do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+
+  <%= form.submit %>
+<% end %>
