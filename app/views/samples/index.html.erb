@@ -1,9 +1,14 @@
-<table>
+<div class="container mt-5">
+	<div class="row">
+	<table class="table col-sm-4 table-hover border-0">
   <% @samples.each do |sample| %>
     <tr>
-      <td><%= link_to sample.name, sample_path(sample) %></td>
-      <td><%= button_to 'Edit', edit_sample_path(sample), method: 'get'%></td>
-      <td><%= button_to 'Remove', sample_path(sample), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+      <td class="border-0"><%= link_to sample.name, sample_path(sample) %></td>
+      <td class="border-0"><%= button_to 'Edit', edit_sample_path(sample), method: 'get'%></td>
+      <td class="border-0"><%= button_to 'Remove', sample_path(sample), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
   <% end %>
 </table>
-<%= link_to "Add a New Sample", new_sample_path %>
+<button type="button" class="btn"><%= link_to "Add a New Sample", new_sample_path %></button>
+</div>
+</div>
+
