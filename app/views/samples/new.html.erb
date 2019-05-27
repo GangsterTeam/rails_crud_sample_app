@@ -1,2 +1,7 @@
-<h1>Samples#new</h1>
-<p>Find me in app/views/samples/new.html.erb</p>
+<h3>Create a Sample</h3>
+<%= form_with model: @sample do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+
+  <%= form.submit %>
+<% end %>
+
