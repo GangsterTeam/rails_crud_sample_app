@@ -1,0 +1,5 @@
+<ul>
+  <% @samples.each do |sample| %>
+    <li><%= link_to sample.name, sample_path(sample)  %></li>
+  <% end %>
+</ul>
