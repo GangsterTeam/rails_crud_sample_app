@@ -83,3 +83,27 @@ end
   <%= form.submit %>
 <% end %>
 ```
+9. Update part
+**app/controllers/samples_controller.rb**
+```ruby
+def edit
+  @sample = Sample.find(params[:id])
+end
+def update
+  @dog = Sample.find(params[:id])
+  @Sample.update(sample_params)
+  redirect_to sample_path(@sample)
+end
+private
+  def sample_params
+  params.require(:sample).permit(:name)
+end
+```
+**views/samples/edit.html.erb**
+```ruby
+<h3>Update Sample Details</h3>
+<%= form_with model: @sample do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+  <%= form.submit %>
+<% end %>
+```
