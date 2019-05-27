@@ -24,6 +24,12 @@ class SamplesController < ApplicationController
 
     redirect_to sample_path(@sample)
   end
+  def destroy
+    @sample = Sample.find(params[:id])
+    @sample.destroy
+
+    redirect_to samples_path
+  end
 
   private
 

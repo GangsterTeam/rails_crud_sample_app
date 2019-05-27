@@ -1,1 +1,2 @@
 <h1><%= @sample.name %></h1>
+<%= link_to 'Remove', @sample, method: :delete, data: { confirm: 'Are you sure?' } %>
