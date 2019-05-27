@@ -107,3 +107,16 @@ end
   <%= form.submit %>
 <% end %>
 ```
+10. Delete part
+**app/controllers/samples_controller.rb**
+```ruby
+def destroy
+  @sample = Sample.find(params[:id])
+  @sample.destroy
+  redirect_to samples_path
+end
+```
+**views/samples/show.html.erb**
+```ruby
+<%= link_to 'Remove', @sample, method: :delete, data: { confirm: 'Are you sure?' } %>
+```
