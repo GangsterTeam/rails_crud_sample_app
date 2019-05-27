@@ -17,18 +17,33 @@
 
 ```
 Rails.application.routes.draw do
-  resources :dogs
+  resources :samples
 end
 ```
-
 or 
-
 ```
 Rails.application.routes.draw do
-get 'dogs/index'
-get 'dogs/show'
-get 'dogs/new'
-get 'dogs/edit'
+get 'samples/index'
+get 'samples/show'
+get 'samples/new'
+get 'samples/edit'
 end
 ```
+6. rake db:migrate
+7.Get / Show the list
+*app/controllers/samples_controller.rb*
+```
+def index
+@samples = Sample.all
+end
+```
+*views/samples/index.html.erb*
+```
+<ul>
+  <% @samples.each do |sample| %>
+    <li><%= link_to sample.name, sample_path(sample)  %></li>
+  <% end %>
+</ul>
+```
+
 
