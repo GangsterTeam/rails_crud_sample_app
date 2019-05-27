@@ -53,4 +53,33 @@ def show
 @sample = Sample.find(params[:id])
 end
 ```
+**views/samples/show.html.erb**
+```ruby
+<h1><%= @sample.name %></h1>
+```
+8. create a sample record
 
+**app/controllers/samples_controller.rb**
+```ruby
+def new
+@sample = Sample.new
+end
+
+def create
+sample = Sample.create(sample_params)
+redirect_to samples_path
+end
+
+private
+def sample_params
+params.require(:sample).permit(:name)
+end
+```
+**views/samples/new.html.erb**
+```ruby
+<h3>Create a Sample</h3>
+<%= form_with model: @sample do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+  <%= form.submit %>
+<% end %>
+```
