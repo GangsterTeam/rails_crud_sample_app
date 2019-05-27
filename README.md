@@ -90,7 +90,7 @@ def edit
   @sample = Sample.find(params[:id])
 end
 def update
-  @dog = Sample.find(params[:id])
+  @sample = Sample.find(params[:id])
   @Sample.update(sample_params)
   redirect_to sample_path(@sample)
 end
@@ -120,3 +120,6 @@ end
 ```ruby
 <%= link_to 'Remove', @sample, method: :delete, data: { confirm: 'Are you sure?' } %>
 ```
+
+## Here we Goo..
+![crud_app_rails](https://user-images.githubusercontent.com/4152211/58434368-ec76a300-80d8-11e9-870f-1ab54b8307f1.png)
