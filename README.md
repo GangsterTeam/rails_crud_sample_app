@@ -84,6 +84,7 @@ end
 <% end %>
 ```
 9. Update part
+
 **app/controllers/samples_controller.rb**
 ```ruby
 def edit
@@ -108,6 +109,7 @@ end
 <% end %>
 ```
 10. Delete part
+
 **app/controllers/samples_controller.rb**
 ```ruby
 def destroy
